@@ -57,6 +57,8 @@ Para apontar para outra URL:
 
 - defina `VITE_API_BASE_URL=http://host-do-gateway:8080`
 
+No Vercel, nao configure `VITE_API_BASE_URL`. A aplicacao detecta o dominio `*.vercel.app`, chama a API por caminho relativo `/api` e o arquivo `api/[...path].js` encaminha as requisicoes para o API Gateway do backend.
+
 O modo local em memoria/localStorage existe apenas para desenvolvimento isolado e so e ativado explicitamente:
 
 - defina `VITE_USE_MOCK_API=true`
