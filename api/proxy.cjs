@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const { path } = req.query;
   const urlPath = req.url ? req.url.replace(/^.*\/api\//, '').split('?')[0] : '';
   const targetPath = Array.isArray(path) ? path.join('/') : (path || urlPath);
@@ -26,17 +26,17 @@ export default async function handler(req, res) {
       fetchOptions.body = JSON.stringify(fetchOptions.body);
     }
 
-    const response = await fetch(targetUrl, fetchOptions);
-    const data = await response.text();
+    const fetchResponse = await fetch(targetUrl, fetchOptions);
+    const data = await fetchResponse.text();
 
-    const contentType = response.headers.get('content-type');
+    const contentType = fetchResponse.headers.get('content-type');
     if (contentType) {
       res.setHeader('content-type', contentType);
     }
 
-    res.status(response.status).send(data);
+    res.status(fetchResponse.status).send(data);
   } catch (error) {
     console.error('Proxy error:', error);
     res.status(502).json({ error: 'Backend proxy failed', details: error.message });
   }
-}
+};
