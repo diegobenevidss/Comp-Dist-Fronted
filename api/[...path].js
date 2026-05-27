@@ -1,6 +1,7 @@
 export default async function handler(req, res) {
   const { path } = req.query;
-  const targetPath = Array.isArray(path) ? path.join('/') : (path || '');
+  const urlPath = req.url ? req.url.replace(/^.*\/api\//, '').split('?')[0] : '';
+  const targetPath = Array.isArray(path) ? path.join('/') : (path || urlPath);
   
   const baseUrl = process.env.BACKEND_API_BASE_URL || process.env.VITE_API_BASE_URL || 'http://api.20.206.214.132.nip.io';
   const targetUrl = `${baseUrl.replace(/\/$/, '')}/api/${targetPath}`;
