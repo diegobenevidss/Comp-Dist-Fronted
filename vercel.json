@@ -1,18 +1,15 @@
 {
-  "builds": [
+  "routes": [
     {
-      "src": "api/**/*.cjs",
-      "use": "@vercel/node"
+      "src": "/api/(.*)",
+      "dest": "http://api.20.206.214.132.nip.io/api/$1"
     },
     {
-      "src": "package.json",
-      "use": "@vercel/static-build"
-    }
-  ],
-  "rewrites": [
+      "handle": "filesystem"
+    },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
