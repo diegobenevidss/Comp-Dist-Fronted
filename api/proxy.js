@@ -1,7 +1,8 @@
 module.exports = async function handler(req, res) {
   // Extract the target path safely
   const fullUrl = req.url;
-  const targetPath = fullUrl.includes('targetPath=') ? fullUrl.split('targetPath=')[1] : null;
+  const rawTargetPath = fullUrl.includes('targetPath=') ? fullUrl.split('targetPath=')[1] : null;
+  const targetPath = rawTargetPath ? decodeURIComponent(rawTargetPath) : null;
 
   if (!targetPath) {
     return res.status(400).json({ error: 'Missing targetPath query parameter' });
