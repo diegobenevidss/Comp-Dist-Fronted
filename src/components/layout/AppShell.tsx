@@ -10,7 +10,7 @@ type AppShellProps = PropsWithChildren<{
   userName: string;
   apiModeLabel: string;
   isMock: boolean;
-  navItems: Array<{ key: string; label: string }>;
+  navItems: Array<{ key: string; label: string; icon?: React.ReactNode }>;
   onNavigate: (route: string) => void;
   onLogout: () => Promise<void> | void;
   onToggleTheme: () => void;
@@ -74,10 +74,11 @@ export function AppShell({
                   setMobileMenuOpen(false);
                 }}
                 className={[
-                  'shrink-0 rounded-xl border px-4 py-2 text-sm font-bold transition',
-                  active ? 'border-ember bg-parchment text-emberStrong' : 'border-[var(--border)] bg-panel text-ink'
+                  'shrink-0 rounded-xl border px-4 py-2 text-sm font-bold transition flex items-center gap-2',
+                  active ? 'border-ember bg-parchment text-emberStrong' : 'border-[var(--border)] bg-panel text-ink hover:bg-sand'
                 ].join(' ')}
               >
+                {item.icon}
                 {item.label}
               </button>
             );
@@ -87,7 +88,7 @@ export function AppShell({
         {mobileMenuOpen ? (
           <div className="mt-3 grid gap-3 rounded-2xl border border-[var(--border)] bg-panelSoft p-4">
             <div>
-              <div className="text-xs font-bold uppercase tracking-[0.28em] text-clay">Sessao ativa</div>
+              <div className="text-xs font-bold uppercase tracking-[0.28em] text-clay">Sessão ativa</div>
               <div className="mt-1 text-sm font-black text-ink">{userName}</div>
             </div>
             <div className="flex items-center justify-between gap-3">
@@ -112,7 +113,7 @@ export function AppShell({
             <BrandMark />
 
             <section className="rounded-3xl border border-[var(--border)] bg-sand p-4">
-              <div className="text-xs font-bold uppercase tracking-[0.28em] text-clay">Sessao ativa</div>
+              <div className="text-xs font-bold uppercase tracking-[0.28em] text-clay">Sessão ativa</div>
               <div className="mt-2 text-lg font-black text-ink">{userName}</div>
               <p className="mt-1 text-sm text-cocoa">Acesso seguro ao painel operacional do hospital.</p>
             </section>
@@ -126,11 +127,14 @@ export function AppShell({
                     key={item.key}
                     type="button"
                     className={[
-                      'rounded-2xl border px-4 py-4 text-left transition',
-                      active ? 'border-ember bg-parchment' : 'border-[var(--border)] bg-panel'
+                      'rounded-2xl border px-4 py-4 text-left transition flex items-center gap-3',
+                      active ? 'border-ember bg-parchment' : 'border-[var(--border)] bg-panel hover:bg-sand/50'
                     ].join(' ')}
                     onClick={() => onNavigate(item.key)}
                   >
+                    <div className={['flex items-center justify-center', active ? 'text-emberStrong' : 'text-cocoa'].join(' ')}>
+                      {item.icon}
+                    </div>
                     <div className={['text-sm font-black', active ? 'text-emberStrong' : 'text-ink'].join(' ')}>{item.label}</div>
                   </button>
                 );
@@ -140,7 +144,7 @@ export function AppShell({
             <section className="rounded-3xl border border-[var(--border)] bg-panelSoft p-4">
               <div className="text-xs font-bold uppercase tracking-[0.28em] text-clay">API</div>
               <div className="mt-2 text-sm font-bold text-ink">{apiModeLabel}</div>
-              <p className="mt-1 text-xs leading-5 text-cocoa">Sessao autenticada com persistencia e integracao preparada para os servicos distribuidos.</p>
+              <p className="mt-1 text-xs leading-5 text-cocoa">Sessão autenticada com persistência e integração preparada para os serviços distribuídos.</p>
               <div className="mt-4">{environmentBadge}</div>
             </section>
 
@@ -162,7 +166,7 @@ export function AppShell({
           <div className="border-b border-[var(--border)] bg-[var(--panel)]/90 px-4 py-5 shadow-soft md:px-6 lg:px-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div className="max-w-3xl gap-2">
-                <div className="text-xs font-bold uppercase tracking-[0.3em] text-clay">HealthSys Distribuido</div>
+                <div className="text-xs font-bold uppercase tracking-[0.3em] text-clay">HealthSys Distribuído</div>
                 <h1 className="text-2xl font-black text-ink sm:text-3xl md:text-4xl">{title}</h1>
                 <p className="text-sm leading-6 text-cocoa md:text-base">{subtitle}</p>
               </div>

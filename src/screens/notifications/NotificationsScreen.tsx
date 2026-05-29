@@ -90,7 +90,7 @@ export function NotificationsScreen() {
   useEffect(() => {
     setIsLoading(true);
     loadNotifications(filter)
-      .catch((cause) => setError(cause instanceof Error ? cause.message : 'Falha ao carregar notificacoes'))
+      .catch((cause) => setError(cause instanceof Error ? cause.message : 'Falha ao carregar notificações'))
       .finally(() => setIsLoading(false));
   }, [filter]);
 
@@ -103,9 +103,9 @@ export function NotificationsScreen() {
       const updatedNotification = await apiClient.markNotificationAsRead(notification.id);
       setSelectedNotification(updatedNotification);
       await loadNotifications();
-      setMessage('Notificacao marcada como lida.');
+      setMessage('Notificação marcada como lida.');
     } catch (cause) {
-      setError(cause instanceof Error ? cause.message : 'Nao foi possivel atualizar a notificacao.');
+      setError(cause instanceof Error ? cause.message : 'Não foi possível atualizar a notificação.');
     } finally {
       setUpdatingId(null);
     }
@@ -118,7 +118,7 @@ export function NotificationsScreen() {
     try {
       setSelectedNotification(await apiClient.getNotification(notificationId));
     } catch (cause) {
-      setError(cause instanceof Error ? cause.message : 'Nao foi possivel carregar a notificacao.');
+      setError(cause instanceof Error ? cause.message : 'Não foi possível carregar a notificação.');
     } finally {
       setIsLoadingDetails(false);
     }
@@ -127,9 +127,9 @@ export function NotificationsScreen() {
   return (
     <div className="grid gap-6">
       <SectionHeader
-        eyebrow="Comunicacao assincrona"
-        title="Central de notificacoes"
-        description="Acompanhe eventos gerados pelos servicos distribuidos e marque como lidos os itens ja tratados pela equipe."
+        eyebrow="Comunicação assíncrona"
+        title="Central de notificações"
+        description="Acompanhe os eventos assíncronos e integrações geradas pelos serviços distribuídos do HealthSys. Marque como lidos os itens já tratados pela equipe."
         action={<Badge label={`${unreadCount} abertas`} tone={unreadCount > 0 ? 'warning' : 'success'} />}
       />
 
@@ -138,7 +138,7 @@ export function NotificationsScreen() {
           <div className="flex flex-col justify-between gap-3 xl:flex-row xl:items-end">
             <div>
               <h3 className="text-xl font-black text-ink">Eventos recebidos</h3>
-              <p className="text-sm leading-6 text-cocoa">Os registros refletem mensagens processadas pelo servico de notificacao.</p>
+              <p className="text-sm leading-6 text-cocoa">Os registros refletem mensagens processadas pelo serviço de notificação.</p>
             </div>
             <div className="min-w-[280px]">
               <SegmentedControl label="Filtro" value={filter} onChange={setFilter} options={filterOptions} />
@@ -152,7 +152,7 @@ export function NotificationsScreen() {
             <div className="rounded-3xl border border-stone bg-panelSoft px-4 py-4">
               <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-[0.28em] text-clay">Detalhe da notificacao</div>
+                  <div className="text-xs font-bold uppercase tracking-[0.28em] text-clay">Detalhe da notificação</div>
                   <div className="mt-2 text-base font-black text-ink">{formatEvent(selectedNotification.eventType)}</div>
                   <p className="mt-1 text-sm leading-6 text-cocoa">{describeNotification(selectedNotification)}</p>
                 </div>
@@ -171,9 +171,9 @@ export function NotificationsScreen() {
           ) : null}
 
           {isLoading ? (
-            <div className="rounded-2xl border border-stone bg-panel px-4 py-5 text-sm font-bold text-cocoa">Carregando notificacoes...</div>
+            <div className="rounded-2xl border border-stone bg-panel px-4 py-5 text-sm font-bold text-cocoa">Carregando notificações...</div>
           ) : notifications.length === 0 ? (
-            <EmptyState title="Nenhuma notificacao encontrada" description="Novos eventos aparecerao aqui conforme os servicos forem processando mensagens." />
+            <EmptyState title="Nenhuma notificação encontrada" description="Novos eventos aparecerão aqui conforme os serviços forem processando mensagens." />
           ) : (
             <div className="grid gap-3">
               {notifications.map((notification) => (

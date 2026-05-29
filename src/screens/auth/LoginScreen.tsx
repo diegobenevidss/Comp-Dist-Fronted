@@ -38,7 +38,7 @@ export function LoginScreen() {
         <BrandMark contrast />
         <div className="mt-5 max-w-sm">
           <Badge label="Acesso hospitalar" tone="soft" />
-          <h1 className="mt-3 text-2xl font-black leading-tight text-white">Operacao clinica distribuida em tempo real.</h1>
+          <h1 className="mt-3 text-2xl font-black leading-tight text-white">Operação clínica distribuída em tempo real.</h1>
         </div>
       </div>
 
@@ -53,17 +53,17 @@ export function LoginScreen() {
           <div className="relative mt-12 max-w-3xl">
             <Badge label="Gestao Hospitalar Distribuida" tone="soft" />
             <h2 className="mt-5 text-5xl font-black leading-[0.98] tracking-[-0.04em] text-white xl:text-6xl">
-              Uma central unica para admissao, triagem e comunicacao assistencial.
+              Uma central única para admissão, triagem e comunicação assistencial.
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/90">
-              O HealthSys organiza pacientes, usuarios, classificacao de risco e notificacoes clinicas em uma experiencia integrada para equipes administrativas e assistenciais.
+              O HealthSys organiza pacientes, usuários, classificação de risco e notificações clínicas em uma experiência integrada para equipes administrativas e assistenciais.
             </p>
           </div>
 
           <div className="relative mt-10 grid max-w-3xl gap-3 xl:grid-cols-3">
             {[
-              ['Admissao', 'Cadastro e atualizacao de pacientes com rastreabilidade.'],
-              ['Triagem', 'Priorizacao clinica e acompanhamento do primeiro atendimento.'],
+              ['Admissão', 'Cadastro e atualização de pacientes com rastreabilidade.'],
+              ['Triagem', 'Priorização clínica e acompanhamento do primeiro atendimento.'],
               ['Alertas', 'Eventos assincronos para manter a equipe informada.']
             ].map(([title, description]) => (
               <div key={title} className="rounded-[1.75rem] border border-white/20 bg-white/[0.12] p-5 backdrop-blur">
@@ -76,7 +76,7 @@ export function LoginScreen() {
           <div className="relative mt-auto max-w-xl rounded-[2rem] border border-white/20 bg-[#2d140d]/[0.35] p-5 backdrop-blur">
             <div className="text-xs font-bold uppercase tracking-[0.28em] text-white/70">Ambiente seguro</div>
             <p className="mt-3 text-sm leading-6 text-white/80">
-              Entre com uma conta cadastrada. O acesso ao painel respeita perfil de usuario, JWT ativo e logout com revogacao de sessao.
+              Entre com uma conta cadastrada. O acesso ao painel respeita perfil de usuário, JWT ativo e logout com revogação de sessão.
             </p>
           </div>
         </section>
@@ -88,7 +88,7 @@ export function LoginScreen() {
                 <Badge label="Acesso restrito" tone="warning" />
                 <h1 className="text-4xl font-black tracking-[-0.04em] text-ink">Entrar no HealthSys</h1>
                 <p className="text-sm leading-6 text-cocoa">
-                  Use suas credenciais institucionais para acessar pacientes, triagens, notificacoes e administracao de usuarios.
+                  Use suas credenciais institucionais para acessar pacientes, triagens, notificações e administração de usuários.
                 </p>
               </div>
 

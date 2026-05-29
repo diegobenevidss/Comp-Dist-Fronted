@@ -1,5 +1,6 @@
 import { useEffect, type ReactElement } from 'react';
 import { Navigate, Outlet, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { LayoutDashboard, Users, UserRound, Stethoscope, Bell } from 'lucide-react';
 
 import { useAuthContext } from '../contexts/AuthContext';
 import { useThemeContext } from '../contexts/ThemeContext';
@@ -15,23 +16,23 @@ import { NotificationsScreen } from '../screens/notifications/NotificationsScree
 const routeTitles: Record<string, { title: string; subtitle: string }> = {
   '/dashboard': {
     title: 'Painel hospitalar',
-    subtitle: 'Visao consolidada da operacao, pacientes, triagens e comunicacoes clinicas.'
+    subtitle: 'Visão consolidada da operação, pacientes, triagens e comunicações clínicas.'
   },
   '/users': {
-    title: 'Usuarios e acessos',
+    title: 'Usuários e acessos',
     subtitle: 'Fluxo administrativo para criar, consultar e organizar perfis do sistema.'
   },
   '/patients': {
-    title: 'Pacientes e historico',
-    subtitle: 'Cadastro, consulta, atualizacao e controle de status dos pacientes.'
+    title: 'Pacientes e histórico',
+    subtitle: 'Cadastro, consulta, atualização e controle de status dos pacientes.'
   },
   '/triages': {
-    title: 'Triagem clinica',
-    subtitle: 'Abertura, priorizacao e acompanhamento do atendimento inicial.'
+    title: 'Triagem clínica',
+    subtitle: 'Abertura, priorização e acompanhamento do atendimento inicial.'
   },
   '/notifications': {
-    title: 'Notificacoes',
-    subtitle: 'Eventos operacionais recebidos da comunicacao assincrona entre servicos.'
+    title: 'Notificações',
+    subtitle: 'Eventos operacionais recebidos da comunicação assíncrona entre serviços.'
   }
 };
 
@@ -79,11 +80,11 @@ function ShellLayout() {
 
   const routeMeta = routeTitles[location.pathname] ?? routeTitles['/dashboard'];
   const navItems = [
-    { key: '/dashboard', label: 'Dashboard' },
-    ...(userRole === 'ADMIN' ? [{ key: '/users', label: 'Usuarios' }] : []),
-    { key: '/patients', label: 'Pacientes' },
-    { key: '/triages', label: 'Triagens' },
-    { key: '/notifications', label: 'Notificacoes' }
+    { key: '/dashboard', label: 'Dashboard', icon: <LayoutDashboard size={20} /> },
+    ...(userRole === 'ADMIN' ? [{ key: '/users', label: 'Usuários', icon: <Users size={20} /> }] : []),
+    { key: '/patients', label: 'Pacientes', icon: <UserRound size={20} /> },
+    { key: '/triages', label: 'Triagens', icon: <Stethoscope size={20} /> },
+    { key: '/notifications', label: 'Notificações', icon: <Bell size={20} /> }
   ];
 
   useEffect(() => {
@@ -94,7 +95,7 @@ function ShellLayout() {
 
   return (
     <AppShell
-      apiModeLabel={apiEnvironment.isMock ? 'Operacao local' : 'Operacao integrada'}
+      apiModeLabel={apiEnvironment.isMock ? 'Operação local' : 'Operação integrada'}
       currentRoute={location.pathname}
       navItems={navItems}
       onLogout={async () => {

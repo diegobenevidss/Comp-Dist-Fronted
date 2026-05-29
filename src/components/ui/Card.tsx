@@ -5,5 +5,5 @@ type CardProps = PropsWithChildren<{
 }>;
 
 export function Card({ children, className = '' }: CardProps) {
-  return <section className={['rounded-3xl border border-stone bg-panel p-5 shadow-soft', className].join(' ')}>{children}</section>;
+  return <section className={['group rounded-3xl border border-stone bg-panel p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-xl', className].join(' ')}>{children}</section>;
 }

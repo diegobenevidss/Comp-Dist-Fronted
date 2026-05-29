@@ -18,7 +18,7 @@ const initialForm: CreateUserInput = {
 };
 
 const profileOptions: Array<{ label: string; value: UserRole; description: string }> = [
-  { label: 'Admin', value: 'ADMIN', description: 'Acessa configuracoes e usuarios' },
+  { label: 'Admin', value: 'ADMIN', description: 'Acessa configurações e usuários' },
   { label: 'Saude', value: 'HEALTH_PROFESSIONAL', description: 'Consulta e registra dados clinicos' },
   { label: 'Atendimento', value: 'RECEPTIONIST', description: 'Cadastro e triagem inicial' }
 ];
@@ -65,7 +65,7 @@ export function UsersScreen() {
   return (
     <div className="grid gap-6">
       <SectionHeader
-        eyebrow="Administracao"
+        eyebrow="Administração"
         title="Cadastro e consulta de usuarios"
         description="Fluxo necessario para o administrador controlar perfis e manter o acesso ao sistema organizado."
         action={<Badge label={`${users.length} registros`} tone="neutral" />}
@@ -76,7 +76,7 @@ export function UsersScreen() {
           <div className="grid gap-4">
             <div className="grid gap-2">
               <h3 className="text-xl font-black text-ink">Novo usuario</h3>
-              <p className="text-sm leading-6 text-cocoa">Crie contas com perfil definido para manter o acesso restrito por funcao.</p>
+              <p className="text-sm leading-6 text-cocoa">Crie contas com perfil definido para manter o acesso restrito por função.</p>
             </div>
 
             <Input label="Nome completo" value={form.name} onChange={(event) => setForm((current) => ({ ...current, name: event.target.value }))} placeholder="Nome do usuario" />

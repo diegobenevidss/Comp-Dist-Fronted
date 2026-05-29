@@ -180,7 +180,7 @@ export function TriagesScreen() {
           <div className="grid gap-4">
             <div className="grid gap-2">
               <h3 className="text-xl font-black text-ink">Nova triagem</h3>
-              <p className="text-sm leading-6 text-cocoa">A recepcao pode abrir a triagem e a equipe clinica atualiza o andamento.</p>
+              <p className="text-sm leading-6 text-cocoa">A recepção pode abrir a triagem e a equipe clínica atualiza o andamento.</p>
             </div>
 
             <label className="grid gap-2">
@@ -216,7 +216,7 @@ export function TriagesScreen() {
             />
 
             <Input
-              label="Observacoes"
+              label="Observações"
               value={form.notes}
               onChange={(event) => setForm((current) => ({ ...current, notes: event.target.value }))}
               placeholder="Sinais, sintomas ou contexto relevante"

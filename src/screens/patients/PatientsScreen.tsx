@@ -148,7 +148,7 @@ export function PatientsScreen() {
     <div className="grid gap-6">
       <SectionHeader
         eyebrow="Cadastros"
-        title="Pacientes, consulta e atualizacao"
+        title="Pacientes, consulta e atualização"
         description="Cadastre pacientes, mantenha os contatos atualizados e inative registros quando necessario sem remover o historico."
         action={<Badge label={`${patients.length} registros`} tone="neutral" />}
       />
@@ -158,7 +158,7 @@ export function PatientsScreen() {
           <div className="grid gap-4">
             <div className="grid gap-2">
               <h3 className="text-xl font-black text-ink">{selectedPatient ? 'Editar paciente' : 'Novo paciente'}</h3>
-              <p className="text-sm leading-6 text-cocoa">Atualize dados pessoais e de contato usados pela recepcao e pela triagem clinica.</p>
+              <p className="text-sm leading-6 text-cocoa">Atualize dados pessoais e de contato usados pela recepção e pela triagem clínica.</p>
             </div>
 
             <Input label="Nome completo" value={form.name} onChange={(event) => setForm((current) => ({ ...current, name: event.target.value }))} placeholder="Nome do paciente" />
@@ -230,11 +230,11 @@ export function PatientsScreen() {
                 <h3 className="text-xl font-black text-ink">Pacientes cadastrados</h3>
                 <p className="text-sm leading-6 text-cocoa">Clique em um registro para editar os dados imediatamente.</p>
               </div>
-              <Badge label={selectedPatient ? 'Em edicao' : 'Lista'} tone={selectedPatient ? 'warning' : 'neutral'} />
+              <Badge label={selectedPatient ? 'Em edição' : 'Lista'} tone={selectedPatient ? 'warning' : 'neutral'} />
             </div>
 
             {patients.length === 0 ? (
-              <EmptyState title="Nenhum paciente encontrado" description="Cadastre o primeiro paciente para liberar o fluxo de edicao." />
+              <EmptyState title="Nenhum paciente encontrado" description="Cadastre o primeiro paciente para liberar o fluxo de edição." />
             ) : (
               <div className="grid gap-3">
                 {patients.map((patient) => {
