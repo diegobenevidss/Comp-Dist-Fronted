@@ -20,6 +20,14 @@
   --border: #e7d8c8;
   --accent: #e98936;
   --accent-strong: #b85600;
+
+  /* Tailwind Mapped Colors - Light Mode */
+  --sand: #FFF6ED;
+  --parchment: #FFF0DF;
+  --clay: #AF5D1F;
+  --smoke: #A69A84;
+  --mist: #CFC4B7;
+  --stone: #EAEAEA;
 }
 
 :root[data-theme='dark'] {
@@ -32,6 +40,14 @@
   --border: #4b3327;
   --accent: #e4a87b;
   --accent-strong: #e98936;
+
+  /* Tailwind Mapped Colors - Dark Mode */
+  --sand: #2b1d16;
+  --parchment: #3a251b;
+  --clay: #e1b68c;
+  --smoke: #4b3327;
+  --mist: #3a251b;
+  --stone: #4b3327;
 }
 
 html,
@@ -45,7 +61,7 @@ body {
   background:
     radial-gradient(circle at top left, rgba(233, 137, 54, 0.16), transparent 28%),
     radial-gradient(circle at top right, rgba(184, 86, 0, 0.1), transparent 22%),
-    linear-gradient(180deg, #fffaf3 0%, #fffdf9 55%, #fff7ee 100%);
+    linear-gradient(180deg, var(--bg) 0%, var(--bg) 55%, var(--panel-soft) 100%);
   color: var(--text);
 }
 

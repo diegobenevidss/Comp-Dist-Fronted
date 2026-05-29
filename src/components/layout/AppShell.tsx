@@ -75,7 +75,7 @@ export function AppShell({
                 }}
                 className={[
                   'shrink-0 rounded-xl border px-4 py-2 text-sm font-bold transition',
-                  active ? 'border-ember bg-parchment text-emberStrong' : 'border-[var(--border)] bg-white text-ink'
+                  active ? 'border-ember bg-parchment text-emberStrong' : 'border-[var(--border)] bg-panel text-ink'
                 ].join(' ')}
               >
                 {item.label}
@@ -127,7 +127,7 @@ export function AppShell({
                     type="button"
                     className={[
                       'rounded-2xl border px-4 py-4 text-left transition',
-                      active ? 'border-ember bg-parchment' : 'border-[var(--border)] bg-white'
+                      active ? 'border-ember bg-parchment' : 'border-[var(--border)] bg-panel'
                     ].join(' ')}
                     onClick={() => onNavigate(item.key)}
                   >

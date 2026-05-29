@@ -206,7 +206,7 @@ export function PatientsScreen() {
                 {patientTriages.length > 0 ? (
                   <div className="mt-4 grid gap-2">
                     {patientTriages.slice(0, 3).map((triage) => (
-                      <div key={triage.id} className="rounded-2xl border border-stone bg-white px-3 py-3">
+                      <div key={triage.id} className="rounded-2xl border border-stone bg-panel px-3 py-3">
                         <div className="text-sm font-black text-ink">{triage.chiefComplaint}</div>
                         <div className="mt-1 text-xs uppercase tracking-[0.2em] text-clay">{triage.priority} / {triage.status}</div>
                       </div>
@@ -243,7 +243,7 @@ export function PatientsScreen() {
                   return (
                     <div
                       key={patient.id}
-                      className={['rounded-2xl border px-4 py-4', active ? 'border-ember bg-parchment' : 'border-stone bg-white']
+                      className={['rounded-2xl border px-4 py-4', active ? 'border-ember bg-parchment' : 'border-stone bg-panel']
                         .filter(Boolean)
                         .join(' ')}
                     >

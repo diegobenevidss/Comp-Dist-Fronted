@@ -186,7 +186,7 @@ export function TriagesScreen() {
             <label className="grid gap-2">
               <span className="text-sm font-bold text-ink">Paciente</span>
               <select
-                className="w-full rounded-2xl border border-mist bg-white px-4 py-3 text-base text-ink outline-none transition focus:border-ember focus:ring-2 focus:ring-ember/20"
+                className="w-full rounded-2xl border border-mist bg-panel px-4 py-3 text-base text-ink outline-none transition focus:border-ember focus:ring-2 focus:ring-ember/20"
                 value={form.patientId}
                 onChange={(event) => handlePatientChange(event.target.value)}
               >
@@ -265,7 +265,7 @@ export function TriagesScreen() {
             ) : (
               <div className="grid gap-3">
                 {filteredTriages.map((triage) => (
-                  <div key={triage.id} className="rounded-2xl border border-stone bg-white px-4 py-4">
+                  <div key={triage.id} className="rounded-2xl border border-stone bg-panel px-4 py-4">
                     <div className="flex flex-col justify-between gap-3 md:flex-row md:items-start">
                       <div className="grid gap-1">
                         <div className="text-base font-black text-ink">{triage.patientName}</div>

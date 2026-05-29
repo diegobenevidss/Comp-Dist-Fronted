@@ -171,13 +171,13 @@ export function NotificationsScreen() {
           ) : null}
 
           {isLoading ? (
-            <div className="rounded-2xl border border-stone bg-white px-4 py-5 text-sm font-bold text-cocoa">Carregando notificacoes...</div>
+            <div className="rounded-2xl border border-stone bg-panel px-4 py-5 text-sm font-bold text-cocoa">Carregando notificacoes...</div>
           ) : notifications.length === 0 ? (
             <EmptyState title="Nenhuma notificacao encontrada" description="Novos eventos aparecerao aqui conforme os servicos forem processando mensagens." />
           ) : (
             <div className="grid gap-3">
               {notifications.map((notification) => (
-                <div key={notification.id} className="rounded-2xl border border-stone bg-white px-4 py-4">
+                <div key={notification.id} className="rounded-2xl border border-stone bg-panel px-4 py-4">
                   <div className="flex flex-col justify-between gap-3 md:flex-row md:items-start">
                     <div className="grid gap-2">
                       <div className="text-base font-black text-ink">{formatEvent(notification.eventType)}</div>

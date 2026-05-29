@@ -4,18 +4,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        sand: '#FFF6ED',
-        parchment: '#FFF0DF',
-        ember: '#E98936',
-        emberStrong: '#B85600',
-        clay: '#AF5D1F',
-        cocoa: '#5C2F12',
-        smoke: '#A69A84',
-        mist: '#CFC4B7',
-        stone: '#EAEAEA',
-        ink: '#212121',
-        panel: '#FFFFFF',
-        panelSoft: '#FFF9F2'
+        sand: 'var(--sand)',
+        parchment: 'var(--parchment)',
+        ember: 'var(--accent)',
+        emberStrong: 'var(--accent-strong)',
+        clay: 'var(--clay)',
+        cocoa: 'var(--muted)',
+        smoke: 'var(--smoke)',
+        mist: 'var(--mist)',
+        stone: 'var(--stone)',
+        ink: 'var(--text)',
+        panel: 'var(--panel)',
+        panelSoft: 'var(--panel-soft)'
       },
       boxShadow: {
         soft: '0 18px 45px rgba(91, 47, 18, 0.12)'

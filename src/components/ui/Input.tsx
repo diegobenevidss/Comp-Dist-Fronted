@@ -15,7 +15,7 @@ type InputProps = BaseProps &
 
 export function Input({ label, error, hint, multiline, rows = 4, className = '', ...props }: InputProps) {
   const sharedClassName =
-    'w-full rounded-2xl border border-mist bg-white px-4 py-3 text-base text-ink outline-none transition focus:border-ember focus:ring-2 focus:ring-ember/20';
+    'w-full rounded-2xl border border-mist bg-panel px-4 py-3 text-base text-ink outline-none transition focus:border-ember focus:ring-2 focus:ring-ember/20';
 
   return (
     <label className="grid gap-2">

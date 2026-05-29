@@ -124,7 +124,7 @@ export function UsersScreen() {
             ) : (
               <div className="grid gap-3">
                 {users.map((user) => (
-                  <div key={user.id} className="rounded-2xl border border-stone bg-white px-4 py-4">
+                  <div key={user.id} className="rounded-2xl border border-stone bg-panel px-4 py-4">
                     <div className="flex items-start justify-between gap-3">
                       <div className="grid gap-1">
                         <div className="text-base font-black text-ink">{user.name}</div>

@@ -25,7 +25,7 @@ export function SegmentedControl<T extends string>({ label, value, onChange, opt
               type="button"
               className={[
                 'min-w-[128px] flex-1 rounded-2xl border px-4 py-3 text-left transition',
-                active ? 'border-ember bg-parchment' : 'border-stone bg-white'
+                active ? 'border-ember bg-parchment' : 'border-stone bg-panel'
               ]
                 .filter(Boolean)
                 .join(' ')}
